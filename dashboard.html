@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dashboard | Pet Management System</title>
+   <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-brand">
+        <h2><span>🐾</span> Pet Management</h2>
+      </div>
+      <ul class="sidebar-nav">
+        <li><a href="/dashboard" class="active"><span class="nav-icon">🏠</span> Dashboard</a></li>
+        <li><a href="/pet_registration"><span class="nav-icon">🐕</span> Pet Registration</a></li>
+        <li><a href="/customer_registration"><span class="nav-icon">👤</span> Customer Registration</a></li>
+        <li><a href="/petadoption"><span class="nav-icon">🤝</span> Pet Adoption / Sales</a></li>
+        <li><a href="/pet_ health"><span class="nav-icon">💉</span> Pet Health & Vaccination</a></li>
+        <li><a href="/login"><span class="nav-icon">🚪</span> Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <header class="page-header">
+        <h1>Dashboard</h1>
+        <p>Welcome back! Manage pets, customers, adoptions, and health records.</p>
+      </header>
+
+      <div class="dashboard-grid">
+        <a href="/pet_registration" class="module-card">
+          <div class="card-icon">🐕</div>
+          <h3> Pet Registration</h3>
+          <p>Register new pets with details, health status & images</p>
+        </a>
+        <a href="/customer_registration" class="module-card">
+          <div class="card-icon">👤</div>
+          <h3> Customer Registration</h3>
+          <p>Add customers with contact & identity details</p>
+        </a>
+        <a href="/petadoption" class="module-card">
+          <div class="card-icon">🤝</div>
+          <h3>Pet Adoption / Sales</h3>
+          <p>Process pet sales and adoption agreements</p>
+        </a>
+        <a href="/pet_ health" class="module-card">
+          <div class="card-icon">💉</div>
+          <h3>Pet Health & Vaccination</h3>
+          <p>Track vaccinations, health records & medical reports</p>
+        </a>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

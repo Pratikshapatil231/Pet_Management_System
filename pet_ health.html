@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pet Health & Vaccination | Pet Management System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-brand"><h2><span>🐾</span> Pet Management</h2></div>
+      <ul class="sidebar-nav">
+        <li><a href="/dashboard" class="active"><span class="nav-icon">🏠</span> Dashboard</a></li>
+        <li><a href="/pet_registration"><span class="nav-icon">🐕</span> Pet Registration</a></li>
+        <li><a href="/customer_registration"><span class="nav-icon">👤</span> Customer Registration</a></li>
+        <li><a href="/petadoption"><span class="nav-icon">🤝</span> Pet Adoption / Sales</a></li>
+        <li><a href="/pet_ health"><span class="nav-icon">💉</span> Pet Health & Vaccination</a></li>
+        <li><a href="index.html"><span class="nav-icon">🚪</span> Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <header class="page-header">
+        <h1>Pet Health & Vaccination</h1>
+        <p>Record vaccination and health information for pets</p>
+      </header>
+
+      <div class="form-card">
+        <div class="form-card-header"><h2>Health Record Details</h2></div>
+        <div class="form-card-body">
+          <form class="login-form" action="/health_demo" method="post">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="record-id">Record ID</label>
+                <input type="text" id="record-id" name="record-id" value="HLT-2026-001" readonly>
+                <span class="form-hint">Auto-generated ID</span>
+              </div>
+
+              <div class="form-group">
+                <label for="pet-search">Pet <span class="required">*</span></label>
+                <div class="search-box">
+                  <input type="search" id="pet-search" name="pet_search" placeholder="Search pet by name or ID..." list="pet-list" required>
+                </div>
+                <datalist id="pet-list">
+                  <option value="PET-2026-001 — Max (Labrador)">
+                  <option value="PET-2026-002 — Bella (Persian Cat)">
+                  <option value="PET-2026-003 — Charlie (German Shepherd)">
+                </datalist>
+              </div>
+
+              <div class="form-group">
+                <label for="vaccination-name">Vaccination Name <span class="required">*</span></label>
+                <select id="vaccination-name" name="vaccination_name" required>
+                  <option value="">Select vaccination</option>
+                  <option value="rabies">Rabies</option>
+                  <option value="dhpp">DHPP (Distemper, Hepatitis, Parvo, Parainfluenza)</option>
+                  <option value="bordetella">Bordetella (Kennel Cough)</option>
+                  <option value="feline-fvrcp">Feline FVRCP</option>
+                  <option value="feline-leukemia">Feline Leukemia</option>
+                  <option value="deworming">Deworming</option>
+                  <option value="other">Other</option>
+                </select>
+              </div>
+
+              <div class="form-group">
+                <label for="vaccination-date">Vaccination Date <span class="required">*</span></label>
+                <input type="date" id="vaccination-date" name="vaccination_date" required>
+              </div>
+
+              <div class="form-group">
+                <label for="next-due-date">Next Due Date <span class="required">*</span></label>
+                <input type="date" id="nexts-due-date" name="nexts_due_date" required>
+              </div>
+
+              <div class="form-group">
+                <label for="vet-name">Veterinarian Name <span class="required">*</span></label>
+                <input type="text" id="vet-name" name="vet_name" placeholder="Dr. Smith" required>
+              </div>
+
+              <div class="form-group">
+                <label>Reminder Enabled</label>
+                <div class="toggle-group">
+                  <label class="toggle-switch">
+                    <input type="checkbox" name="reminder_enabled" checked>
+                    <span class="toggle-slider"></span>
+                  </label>
+                  <span class="toggle-label">Send reminder before next due date</span>
+                </div>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="health-notes">Health Notes</label>
+                <textarea id="health-notes" name="health_notes" placeholder="Observations, reactions, dosage details, follow-up instructions..."></textarea>
+              </div>
+
+              <div class="form-group full-width">
+                <label>Medical Report</label>
+                <div class="file-upload">
+                  <input type="file" id="medical-report" name="medical_report" accept="image/*,.pdf">
+                  <div class="file-upload-box">
+                    <div class="file-upload-icon">🏥</div>
+                    <p class="file-upload-text"><strong>Upload medical report</strong><br>PDF or image files up to 10MB</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="reset" class="btn btn-secondary">Clear Form</button>
+              <button type="submit" class="btn btn-primary">Save</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>

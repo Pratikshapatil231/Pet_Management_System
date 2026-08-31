@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Login | Pet Management System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+  <div class="login-page">
+    <div class="login-card">
+      <div class="login-logo">
+        <div class="icon">🐾</div>
+        <h1>Pet Management System</h1>
+        <p>Module 1 — Admin Login</p>
+      </div>
+
+      <form class="login-form" action="/login-data" method="post">
+        <div class="form-group">
+          <label for="email">Email <span class="required">*</span></label>
+          <input type="email" id="email" name="email" placeholder="admin@petshop.com" required>
+        </div>
+
+        <div class="form-group">
+          <label for="password">Password <span class="required">*</span></label>
+          <input type="password" id="password" name="password" placeholder="Enter your password" required>
+        </div>
+
+        
+
+        <button type="submit" class="btn btn-primary btn-block">Login</button>
+      </form>
+
+      <p class="login-footer">&copy; 2026 Pet Management System</p>
+    </div>
+  </div>
+</body>
+</html>

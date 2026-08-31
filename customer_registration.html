@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Customer Registration | Pet Management System</title>
+    <link rel="stylesheet" href="{{url_for('static',filename='css/style.css')}}">
+</head>
+<body>
+  <div class="app-layout">
+    <aside class="sidebar">
+      <div class="sidebar-brand"><h2><span>🐾</span> Pet Management</h2></div>
+      <ul class="sidebar-nav">
+        <li><a href="/dashboard" class="active"><span class="nav-icon">🏠</span> Dashboard</a></li>
+        <li><a href="/pet_registration"><span class="nav-icon">🐕</span> Pet Registration</a></li>
+        <li><a href="/customer_registration"><span class="nav-icon">👤</span> Customer Registration</a></li>
+        <li><a href="/petadoption"><span class="nav-icon">🤝</span> Pet Adoption / Sales</a></li>
+        <li><a href="/pet_ health"><span class="nav-icon">💉</span> Pet Health & Vaccination</a></li>
+        <li><a href="index.html"><span class="nav-icon">🚪</span> Logout</a></li>
+      </ul>
+    </aside>
+
+    <main class="main-content">
+      <header class="page-header">
+        <h1>Customer Registration</h1>
+        <p>Register a new customer in the system</p>
+      </header>
+
+      <div class="form-card">
+        <div class="form-card-header"><h2>New Customer Details</h2></div>
+        <div class="form-card-body">
+          <form  action="/register-user"method="post">
+            <div class="form-grid">
+              <div class="form-group">
+                <label for="customer-id">Customer ID</label>
+                <input type="text" id="customer-id" name="customer_id" value="CUS-2026-001" readonly>
+                <span class="form-hint">Auto-generated ID</span>
+              </div>
+
+              <div class="form-group">
+                <label for="full_name">Full Name <span class="required">*</span></label>
+                <input type="text" id="full_name" name="full_name" placeholder="Enter full name" required>
+              </div>
+
+              <div class="form-group">
+                <label for="email">Email <span class="required">*</span></label>
+                <input type="email" id="email" name="email" placeholder="customer@email.com" required>
+              </div>
+
+              <div class="form-group">
+                <label for="mobile">Mobile Number <span class="required">*</span></label>
+                <input type="number" id="mobile" name="mobile" placeholder="9876543210" required>
+              </div>
+
+              <div class="form-group full-width">
+                <label for="address">Address <span class="required">*</span></label>
+                <textarea id="address" name="address" placeholder="Street address, building, landmark..." required></textarea>
+              </div>
+
+              <div class="form-group">
+                <label for="city">City <span class="required">*</span></label>
+                <input type="text" id="city" name="city" placeholder="City" required>
+              </div>
+
+              <div class="form-group">
+                <label for="state">State <span class="required">*</span></label>
+                <input type="text" id="state" name="state" placeholder="State" required>
+              </div>
+
+              <div class="form-group">
+                <label for="pincode">Pincode <span class="required">*</span></label>
+                <input type="number" id="pincode" name="pincode" placeholder="400001" required>
+              </div>
+
+              <div class="form-group">
+                <label>Active Status</label>
+                <div class="toggle-group">
+                  <label class="toggle-switch">
+                    <input type="checkbox" name="active-status" checked>
+                    <span class="toggle-slider"></span>
+                  </label>
+                  <span class="toggle-label">Customer is active</span>
+                </div>
+              </div>
+
+              <div class="form-group full-width">
+                <label>Identity Proof</label>
+                <div class="file-upload">
+                  <input type="file" id="identity-proof" name="identity-proof" accept="image/*,.pdf">
+                  <div class="file-upload-box">
+                    <div class="file-upload-icon">📄</div>
+                    <p class="file-upload-text"><strong>Upload identity proof</strong><br>Aadhar, Passport, or Driving License (PDF/Image)</p>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-actions">
+              <button type="reset" class="btn btn-secondary">Clear Form</button>
+              <button type="submit" class="btn btn-primary">Register</button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </main>
+  </div>
+</body>
+</html>
